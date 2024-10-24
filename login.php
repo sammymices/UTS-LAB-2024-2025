@@ -1,53 +1,43 @@
 <?php
-    session_start();
-    include 'koneksi.php';
+session_start();
+include 'db.php';
 
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
 
-        $login_sql = "SELECT id_user, username, password FROM userdata WHERE username = ?";
-        $stmt = $conn->prepare($login_sql);
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        if ($stmt) {
-            $stmt->bind_param("s", $username);
-            $stmt->execute();
-            $stmt->store_result();
-
-            if ($stmt->num_rows == 1) {
-                $stmt->bind_result($user_id, $db_username, $db_password);
-                $stmt->fetch();
-
-                if (password_verify($password, $db_password)) {
-                    $_SESSION['user_id'] = $user_id;
-                    $_SESSION['username'] = $db_username;
-                    header("Location: index.php");
-                } else {
-                    echo "Invalid password or username.";
-                }
-            } else {
-                echo "Invalid password or username.";
-            }
-
-            $stmt->close();
-        } else {
-            echo "Error: " . $conn->error;
-        }
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        header("Location: index.php");
+        exit;
+    } else {
+        echo "Email atau password salah!";
     }
-
-    $conn->close();
-    ?>
-
+}
+?>
 
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Login - tudulis</title>
-    <link rel="stylesheet" type="text/css" href="loginstyle.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="path-to-sweetalert/sweetalert2.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style-login.css">
+    <title>Login</title>
 </head>
-<body style="background-color: #374151;">
+<body>
+
+<form method="post" action="">
+    <h2>Welcome To TODOLIST</h2>
+    <input type="email" name="email" placeholder="Email" required>
+    <input type="password" name="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+    <a href="register.php">Belum mempunyai akun? Register sekarang</a>
+</form>
 
 </body>
 </html>

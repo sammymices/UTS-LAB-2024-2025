@@ -1,0 +1,41 @@
+.todo-list-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+}
+
+.todo-title {
+    flex: 1;
+}
+
+.todo-description {
+    flex: 2;
+}
+
+.todo-deadline {
+    flex: 1;
+}
+
+.todo-actions {
+    margin-left: 20px;
+}
+
+.overdue {
+    background-color: #ea0d1f;
+}
+
+button, a {
+    margin-left: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+a.delete-button {
+    background-color: #dc3545;
+}
