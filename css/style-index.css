@@ -7,7 +7,10 @@
     background-color: rgb(55, 108, 214);
     border-radius: 27px;
 }
-
+li.todo-list-item:hover{
+    background-color: aqua;
+    transition-duration: 400ms;
+}
 .todo-title {
     flex: 1;
 }
@@ -43,15 +46,23 @@ button, a:hover{
     color: #e9e9e9;
     transition-duration: 400ms;
 }
-.done{
+button.done{
     background-color: #28a745;
     color:aliceblue;
     border: none;
     border-radius: 3px;
     padding: 5px 10px;
 }
+button.done :hover{
+    background-color: #017a1d;
+    transition-duration: 400ms;
+}
 a.delete-button {
-    background-color: #dc3545;
+    background-color: #ff0019;
+}
+
+a.delete-button :hover{
+    background-color: #d52d3e;
 }
 
 @media screen and (max-width: 768px) {
