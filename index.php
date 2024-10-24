@@ -50,9 +50,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['list_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="css/style-index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-image: url("css/gambar/background1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed; 
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+
 </head>
 <body>
 
+<div id="bungkus">
 <h2>Dashboard</h2>
 <p>Welcome back, <?= htmlspecialchars($username) ?>!</p>
 
@@ -73,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['list_id'])) {
             <div class="todo-actions">
                 <form method="post" action="" style="display:inline;">
                     <input type="hidden" name="list_id" value="<?= $list['id'] ?>">
-                    <button type="submit">✔ Selesai</button>
+                    <button type="submit" class="done">✔ Selesai</button>
                 </form>
                 <a href="delete_list.php?list_id=<?= $list['id'] ?>" class="delete-button" onclick="return confirm('Apakah Anda yakin ingin menghapus to-do list ini?')">Delete</a>
             </div>
@@ -82,6 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['list_id'])) {
 </ul>
 
 <a href="logout.php">Logout</a>
+</div>
 
 </body>
 </html>

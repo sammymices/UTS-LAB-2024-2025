@@ -1,6 +1,7 @@
+
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #7f0fc1d6;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,19 +28,23 @@ button {
     width: 95%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 3px;
+    border: 1px solid #dddddd;
+    border-radius: 0px;
 }
 
 button {
-    background-color: #28a745;
+    background-color:#8d2bbf ;
     color: white;
     border: none;
     cursor: pointer;
+    transition-duration: 400ms;
 }
 
-button:hover {
-    background-color: #218838;
+button:hover{
+    background-color: #28a745;
+    transition-duration: 400ms;
+    border-radius: 23px;
+    color:#f6e0ff;
 }
 
 a {

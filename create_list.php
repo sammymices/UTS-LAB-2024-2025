@@ -30,6 +30,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Create To-Do List</title>
     <link rel="stylesheet" href="css/style-create-list.css">
 </head>
+<style>
+    
+    body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("css/gambar/background1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+</style>
 <body>
 
 <h2>Buat To-Do List Baru</h2>
@@ -45,9 +64,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="datetime-local" id="deadline" name="deadline" required>
 
     <button type="submit">Buat To-Do List</button>
+    <a href="index.php" class="back-link">Kembali ke Dashboard</a>
 </form>
 
-<a href="index.php" class="back-link">Kembali ke Dashboard</a>
+
 
 </body>
 </html>

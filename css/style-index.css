@@ -4,6 +4,8 @@
     padding: 10px;
     border-bottom: 1px solid #ccc;
     align-items: center;
+    background-color: rgb(55, 108, 214);
+    border-radius: 27px;
 }
 
 .todo-title {
@@ -24,9 +26,9 @@
 
 .overdue {
     background-color: #ea0d1f;
-}
+}s
 
-button, a {
+button, a{
     margin-left: 10px;
     padding: 5px 10px;
     text-decoration: none;
@@ -36,6 +38,42 @@ button, a {
     border-radius: 3px;
 }
 
+button, a:hover{
+    background-color: rgb(153, 61, 228);
+    color: #e9e9e9;
+    transition-duration: 400ms;
+}
+.done{
+    background-color: #28a745;
+    color:aliceblue;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+}
 a.delete-button {
     background-color: #dc3545;
+}
+
+@media screen and (max-width: 768px) {
+    .todo-list-item {
+        flex-direction: column; /* Ubah layout dari horizontal ke vertikal */
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+
+    .todo-title, .todo-description, .todo-deadline {
+        flex: none;
+        width: 100%; /* Atur lebar menjadi 100% */
+        margin-bottom: 10px; /* Beri jarak antar elemen */
+    }
+
+    .todo-actions {
+        display: flex;
+        justify-content: space-between; /* Atur tombol agar saling berjauhan */
+    }
+
+    button, a {
+        width: 100%; /* Tombol akan menyesuaikan lebar layar */
+        margin-bottom: 10px; /* Beri jarak antar tombol */
+    }
 }

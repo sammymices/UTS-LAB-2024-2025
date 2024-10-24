@@ -28,6 +28,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style-login.css">
     <title>Login</title>
+    <style>
+        body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("css/gambar/background1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+    </style>
+    
 </head>
 <body>
 
