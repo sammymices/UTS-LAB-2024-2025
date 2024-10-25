@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <r>email yang ingin dirubah</r>
     <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
     <button type="submit">Update Profil</button>
-    <a href="dashboard.php">Kembali</a>  
+    <a href="index.php">Kembali</a>  
 </form>
 
 </body>

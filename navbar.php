@@ -25,7 +25,7 @@ $username = $_SESSION['username'];
             <div class="bar"></div>
         </div>
         <ul class="navbar-list">
-            <li><a href="dashboard.php" >Dashboard</a></li>
+            <li><a href="index.php" >Dashboard</a></li>
             <li><a href="profile.php" >Profile</a></li>
             <li><a href="about-us.php" >About Us</a></li>
             <li><a href="logout.php" >Logout</a></li>
