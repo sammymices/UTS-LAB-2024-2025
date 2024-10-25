@@ -1,59 +1,60 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+        h1, h2 {
+            color: #007BFF;
+        }
+        p {
+            margin: 1em 0;
+        }
+    </style>
+</head>
+<body>
 <?php
 include 'navbar.php';
 include 'db.php';
+$values = [
+            "Gabriel Imanullah Putra Pribowo" => "00000100492",
+            "Samgar Sammy Napitupulu" => "00000109993",
+            "Muhammad Thomas Pangukir" => "00000109875",
+            "Rafael Gading Samoda" => "00000090472"
+        ];
+    ?>
+<div class="container">
+    <h1>About Us</h1>
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
+    <section>
+        <h2>Member Kelompok 9</h2>
+        <ul>
+            <?php foreach ($values as $key => $value): ?>
+                <li><strong><?php echo $key; ?></strong>  (<?php echo $value; ?>)</li>
+            <?php endforeach; ?>
+        </ul>
+    </section>
 
-$list_id = $_GET['list_id'];
-$user_id = $_SESSION['user_id'];
+   
 
-// Ambil data list dan tugas
-$stmt = $pdo->prepare("SELECT * FROM lists WHERE id = ? AND user_id = ?");
-$stmt->execute([$list_id, $user_id]);
-$list = $stmt->fetch(PDO::FETCH_ASSOC);
-
-if (!$list) {
-    echo "To-Do List tidak ditemukan!";
-    exit;
-}
-
-$stmt = $pdo->prepare("SELECT * FROM tasks WHERE list_id = ?");
-$stmt->execute([$list_id]);
-$tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-?>
-
-<form method="get" action="">
-    <input type="hidden" name="list_id" value="<?= $list_id ?>">
-    <input type="text" name="search" placeholder="Cari tugas..." value="<?= isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '' ?>">
-    <select name="status">
-        <option value="all">Semua</option>
-        <option value="completed">Selesai</option>
-        <option value="incomplete">Belum Selesai</option>
-    </select>
-    <button type="submit">Cari/Filter</button>
-</form>
-
-
-<h2>To-Do List: <?= htmlspecialchars($list['title']) ?></h2>
-
-<form method="post" action="add_task.php">
-    <input type="text" name="task" placeholder="Tambahkan tugas baru" required>
-    <input type="hidden" name="list_id" value="<?= $list_id ?>">
-    <button type="submit">Tambah Tugas</button>
-</form>
-
-<h3>Daftar Tugas:</h3>
-<ul>
-    <?php foreach ($tasks as $task): ?>
-        <li>
-            <?= htmlspecialchars($task['task']) ?>
-            <a href="delete_task.php?task_id=<?= $task['id'] ?>">Hapus</a>
-        </li>
-    <?php endforeach; ?>
-</ul>
-
-<a href="index.php">Kembali</a>
+</body>
+</html>

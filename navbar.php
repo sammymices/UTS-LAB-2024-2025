@@ -5,20 +5,21 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
-// Ambil nama user dari sesi
+
 $username = $_SESSION['username'];
 
-// Ambil nama halaman saat ini
-$current_page = basename($_SERVER['PHP_SELF'], ".php");
+
+
 ?>
 
 <nav class="navbar">
     <div class="navbar-container">
         <div class="navbar-brand">
             <span>Welcome back, <?= htmlspecialchars($username) ?>!</span>
-            <span><?= ucfirst($current_page) ?></span>
+            
         </div>
         <div class="burger-menu" onclick="toggleMenu()">
+            <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
             <div class="bar"></div>
@@ -32,7 +33,7 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
     </div>
 </nav>
 
-<!-- Optional CSS for Navbar -->
+
 <style>
     body {
         margin: 0;
@@ -40,7 +41,7 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
         font-family: Arial, sans-serif;
     }
 
-    /* Navbar Styling */
+    
     .navbar {
         background-color: #333;
         width: 100%;
@@ -103,7 +104,7 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
         transition-duration: 400ms;
     }
 
-    /* Responsive Styling */
+  
     @media (max-width: 768px) {
         .burger-menu {
             display: block;
@@ -137,7 +138,7 @@ $current_page = basename($_SERVER['PHP_SELF'], ".php");
     }
 </style>
 
-<!-- Optional JavaScript for Toggling Menu -->
+
 <script>
     function toggleMenu() {
         var navbarList = document.querySelector('.navbar-list');

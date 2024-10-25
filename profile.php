@@ -52,13 +52,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </style>
 </head>
 <body>
-  <h2>Profil Anda</h2>
+  
 <form method="post" action="">
+    <h2>Profil Anda</h2>
     <r>email yang ingin dirubah</r>
     <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
     <button type="submit">Update Profil</button>
+    <a href="index.php">Kembali</a>  
 </form>
-<a href="index.php">Kembali</a>  
+
 </body>
 
 </html>

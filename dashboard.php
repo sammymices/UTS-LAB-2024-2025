@@ -3,6 +3,8 @@ include 'navbar.php';
 
 include 'db.php';
 
+
+
 if (!isset($_SESSION['user_id'])) {
     header("Location: login.php");
     exit;
@@ -76,6 +78,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['list_id'])) {
     <br>
     <br>
 <div id="bungkus">
+
 <a href="create_list.php">Buat To-Do List Baru</a>
 <h3>To-Do Lists:</h3>
 <ul>
