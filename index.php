@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['list_id'])) {
     <?php endforeach; ?>
 </ul>
 
-<a href="logout.php">Logout</a>
+
 </div>
 
 </body>
