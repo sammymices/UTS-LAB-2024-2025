@@ -68,24 +68,24 @@ a.delete-button :hover{
 
 @media screen and (max-width: 768px) {
     .todo-list-item {
-        flex-direction: column; /* Ubah layout dari horizontal ke vertikal */
+        flex-direction: column;
         padding: 15px;
         margin-bottom: 15px;
     }
 
     .todo-title, .todo-description, .todo-deadline {
         flex: none;
-        width: 100%; /* Atur lebar menjadi 100% */
-        margin-bottom: 10px; /* Beri jarak antar elemen */
+        width: 100%; 
+        margin-bottom: 10px; 
     }
 
     .todo-actions {
         display: flex;
-        justify-content: space-between; /* Atur tombol agar saling berjauhan */
+        justify-content: space-between; 
     }
 
     button, a {
-        width: 100%; /* Tombol akan menyesuaikan lebar layar */
-        margin-bottom: 10px; /* Beri jarak antar tombol */
+        width: 100%; 
+        margin-bottom: 10px; 
     }
 }
