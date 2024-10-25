@@ -65,15 +65,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['list_id'])) {
             display: flex;
             flex-direction: column;
         }
+        
+
     </style>
 
 </head>
 <body>
-
+   <br>
+    <br>
+    <br>
+    <br>
 <div id="bungkus">
-<h2>Dashboard</h2>
-<p>Welcome back, <?= htmlspecialchars($username) ?>!</p>
-
 <a href="create_list.php">Buat To-Do List Baru</a>
 <h3>To-Do Lists:</h3>
 <ul>

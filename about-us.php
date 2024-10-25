@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'navbar.php';
 include 'db.php';
 
 if (!isset($_SESSION['user_id'])) {

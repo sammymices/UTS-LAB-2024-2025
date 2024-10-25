@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'navbar.php';
 include 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
@@ -26,11 +26,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
-<h2>Profil Anda</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style-profile.css">
+    <style>
+     body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url("css/gambar/background1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+</style>
+</head>
+<body>
+  <h2>Profil Anda</h2>
 <form method="post" action="">
-    <input type="text" name="username" value="<?= htmlspecialchars($user['username']) ?>" required>
+    <r>email yang ingin dirubah</r>
     <input type="email" name="email" value="<?= htmlspecialchars($user['email']) ?>" required>
     <button type="submit">Update Profil</button>
 </form>
-<a href="index.php">Kembali</a>
+<a href="index.php">Kembali</a>  
+</body>
+
+</html>
+
+
+
