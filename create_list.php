@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <input type="datetime-local" id="deadline" name="deadline" required>
 
     <button type="submit">Buat To-Do List</button>
-    <a href="index.php" class="back-link">Kembali ke Dashboard</a>
+    <a href="dashboard.php" class="back-link">Kembali ke Dashboard</a>
 </form>
 
 
